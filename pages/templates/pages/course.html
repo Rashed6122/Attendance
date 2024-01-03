@@ -1,0 +1,84 @@
+<!-- pages/templates/pages/home.html -->
+{% extends "base.html" %}
+
+{% block page_content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Capture and Upload Page</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #576d6d;
+        }
+
+        #photoContainer {
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #d9e7e7;
+            margin-bottom: 20px; 
+        }
+
+        #captureButton, #submitButton, #submitCourse {
+            background-color: #2d8282;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+
+        #courseNameInput,#courselst {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="photoContainer">
+        <h1>Attendance</h1>
+        <input type="text" id="courseNameInput" placeholder="Enter New Course Name">
+        <button id="submitButton" onclick="addCourse()">Add New Course</button>
+        <p id ="or" >or</p>
+        <button id="captureButton" onclick="selectExist()">Select Exist Course</button>
+        <select name="course" id="courselst" style="display: none">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+        </select>
+        <button id="submitCourse" onclick="submit()" style="display: none;">Submit</button>
+    </div>
+    <script>
+        function addCourse() {
+            alert("Course Added Succesfully");
+        }
+        function selectExist() {
+            document.getElementById("courseNameInput").style.display = 'none';
+            document.getElementById("or").style.display = 'none';
+            document.getElementById("submitButton").style.display = 'none';
+            document.getElementById("captureButton").style.display = 'none';
+            document.getElementById("submitCourse").style.display = 'block';
+            document.getElementById("courselst").style.display = 'block';
+        }
+        function submit(){}
+    </script>
+</body>
+</html>
+
+{% endblock page_content %}

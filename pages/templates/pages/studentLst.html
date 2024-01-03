@@ -1,0 +1,87 @@
+<!-- pages/templates/pages/home.html -->
+{% extends "base.html" %}
+
+{% block page_content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Capture and Upload Page</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #576d6d;
+        }
+
+        #photoContainer {
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #d9e7e7;
+            margin-bottom: 20px; 
+        }
+
+        #studentDropdown, #studentList {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 10px;
+        }
+        #captureButton {
+            background-color: #2d8282;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+        #courseNameInput {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="photoContainer">
+        <h1>Attendance</h1>
+        
+        <!-- Dropdown menu for selecting an option -->
+        <select id="studentDropdown">
+            <option value="student1">Student 1</option>
+            <option value="student2">Student 2</option>
+            <option value="student3">Student 3</option>
+            <!-- Add more options as needed -->
+        </select>
+
+        <!-- List of student names -->
+        <ol id="studentList">
+            <li>Student 1</li>
+            <li>Student 2</li>
+            <li>Student 3</li>
+            <!-- Add more list items as needed -->
+        </ol>
+        <input type="text" id="courseNameInput" placeholder="Enter Student Name">
+        <button id="captureButton" onclick="selectExist()">Add Student</button>
+    </div>
+    
+
+    <script>
+        // Your JavaScript code (if needed)
+    </script>
+</body>
+</html>
+
+{% endblock page_content %}
