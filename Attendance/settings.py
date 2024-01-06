@@ -23,10 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-(0)exw9^ls)4r3+v63^$vn7mp_58n!-yj!y*gu==kqe_x+ndy8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','localhost','*']
-
+ALLOWED_HOSTS = ['9b07-196-219-57-238','*']
+CSRF_TRUSTED_ORIGINS = [
+    "https://9b07-196-219-57-238.ngrok-free.app"
+]
 
 # Application definition
 
@@ -122,7 +124,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR /'uploads'
+MEDIA_ROOT = BASE_DIR /'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

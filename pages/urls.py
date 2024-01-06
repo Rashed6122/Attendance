@@ -1,16 +1,9 @@
 from django.urls import path
 from pages import views
-from django.contrib import admin
-from django.conf import settings
-from django.conf.urls.static import static
-from .views import image_view
+from .views import download_csv
 
 urlpatterns = [
     path("", views.home, name='home'),
     path("course", views.course, name='course'),
-    path("studentLst", views.image_view, name='studentLst'),
+    path('download_csv/', download_csv, name='download_csv'),
 ]
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL,
-                          document_root=settings.MEDIA_ROOT)
